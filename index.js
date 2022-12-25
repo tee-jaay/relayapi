@@ -30,7 +30,7 @@ app.get('/ebills/index', async (_req, res) => {
                 }
             });
         });
-        res.status(200).json({ ebills: ebillsArr });
+        res.status(200).json(ebillsArr);
     } catch (error) {
         res.status(500).json(error);
     }
