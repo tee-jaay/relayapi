@@ -26,7 +26,7 @@ app.get('/ebills/index', async (_req, res) => {
             entries.items.forEach(function (entry) {
                 if (entry.fields) {
                     ebillsArr.push(entry.fields);
-                    console.log(entry.fields);
+                    // console.log(entry.fields);
                 }
             });
         });
