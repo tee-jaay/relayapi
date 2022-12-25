@@ -20,12 +20,14 @@ app.post('/ebills/create', (req, res) => {
 });
 app.get('/ebills/index', async (_req, res) => {
     let ebillsArr = [];
+    var singleEbill = {};
     try {
         await contentfulClient.getEntries().then(function (entries) {
             //
             entries.items.forEach(function (entry) {
                 if (entry.fields) {
-                    ebillsArr.push(entry.fields);
+                    singleEbill = { ...entry.fields, ...{ id: entry.sys.id } };
+                    ebillsArr.push(singleEbill);
                     // console.log(entry.fields);
                 }
             });
