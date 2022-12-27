@@ -15,10 +15,10 @@ app.get('/health', (_req, res) => {
     res.status(200).json({ 'message': 'Success!' });
 });
 
-app.post('/ebills/create', (req, res) => {
+app.post('/electric-bills/create', (req, res) => {
     res.status(201).json({ 'message': 'Ebills create!' });
 });
-app.get('/ebills/index', async (_req, res) => {
+app.get('/electric-bills/index', async (_req, res) => {
     let ebillsArr = [];
     var singleEbill = {};
     try {
@@ -37,13 +37,13 @@ app.get('/ebills/index', async (_req, res) => {
         res.status(500).json(error);
     }
 });
-app.get('/ebills/show/:id', (req, res) => {
+app.get('/electric-bills/show/:id', (req, res) => {
     res.status(200).json({ 'message': 'Ebills show!' });
 });
-app.put('/ebills/update/:id', (req, res) => {
+app.put('/electric-bills/update/:id', (req, res) => {
     res.status(203).json({ 'message': 'Ebills update!' });
 });
-app.delete('/ebills/destroy/:id', (req, res) => {
+app.delete('/electric-bills/destroy/:id', (req, res) => {
     res.status(204).json({ 'message': 'Ebills destroy!' });
 });
 
