@@ -26,5 +26,5 @@ const server = createServer(app);
 // Initialize app
 
 server.listen(port, () => {
-    console.log(`Example app listening on port ${port}`);
+    console.log(`The app listening on port ${port}`);
 });
