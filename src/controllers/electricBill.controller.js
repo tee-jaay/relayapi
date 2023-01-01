@@ -4,7 +4,7 @@ import ElectricBill from "../models/ElectricBill.model.js";
 
 export const index = async (_req, res) => {
     try {
-        const collections = await ElectricBill.find();
+        const collections = await ElectricBill.find().select("-_id");
         res.status(200).json(collections);
     } catch (error) {
         res.status(500).json(error);
@@ -53,7 +53,7 @@ export const store = async (req, res) => {
 
 export const show = async (req, res) => {
     try {
-        const collection = await ElectricBill.find({ id: req.params.id });
+        const collection = await ElectricBill.find({ id: req.params.id }).select("-_id");
         res.status(200).json(collection);
     } catch (error) {
         res.status(500).json(error);
@@ -98,7 +98,7 @@ export const update = async (req, res) => {
                 fileUrl: fileUrl,
             }
         );
-        const result = await ElectricBill.findOne({ id: id });
+        const result = await ElectricBill.findOne({ id: id }).select("-_id");
         res.status(200).json(result);
     } catch (error) {
         res.status(500).json(error);
