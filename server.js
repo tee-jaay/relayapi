@@ -12,7 +12,7 @@ const port = process.env.PORT || 3000;
 // Env vars
 
 // Database
-const DB_CONN_URI = `mongodb+srv://mongorydusijujo:${process.env.MONGO_PASSWORD}@cluster0.p7jbyvl.mongodb.net/?retryWrites=true&w=majority`;
+const DB_CONN_URI = `mongodb+srv://mongorydusijujo:${process.env.MONGO_PASSWORD}@cluster0.p7jbyvl.mongodb.net/${process.env.MONGO_DATABASE}?retryWrites=true&w=majority`;
 
 mongoose.set('strictQuery', false);
 mongoose
